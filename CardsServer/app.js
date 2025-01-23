@@ -27,5 +27,5 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
 	console.log(chalk.bgGreen.black("The server is listening to port: " + PORT));
 	connectToDB();
-	// createInitialData();
+	createInitialData();
 });

@@ -163,7 +163,23 @@ const createCards = async () => {
 	console.log(chalk.bgBlue.white("3 Cards created for initial data."));
 };
 
-const createInitialData = async (SERCRET_WORD) => {
+const checkIfUsersCreated = async () => {
+	const users = await User.find();
+	if (users.length === 0) {
+		return false;
+	}
+	return true;
+};
+
+const checkIfCardsCreated = async () => {
+	const cards = await Card.find();
+	if (cards.length === 0) {
+		return false;
+	}
+	return true;
+};
+
+const createInitialData = async () => {
 	if (!SECRET_WORD) {
 		console.error(
 			"In order to create initial data, please provide the SECRET_WORD in the .env file."
@@ -171,8 +187,8 @@ const createInitialData = async (SERCRET_WORD) => {
 		return;
 	}
 	try {
-		await createUsers();
-		await createCards();
+		(await checkIfUsersCreated()) ? null : await createUsers();
+		(await checkIfCardsCreated()) ? null : await createCards();
 	} catch (error) {
 		console.error("Error seeding database:", error);
 	}
