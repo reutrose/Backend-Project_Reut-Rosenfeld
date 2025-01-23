@@ -43,8 +43,8 @@ CardsServer is a backend application designed to handle business card management
 
 1. Clone the repository:
 
-   git clone https://github.com/reutrose/Backend-Project_Reut-Rosenfeld
-   cd CardsServer
+   **git clone https://github.com/reutrose/Backend-Project_Reut-Rosenfeld
+   **cd CardsServer
 
 2. Install dependencies:
 
