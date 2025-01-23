@@ -11,6 +11,7 @@ const loginLimiter = rateLimit({
 	handler: (req, res, next, options) => {
 		handleError(res, options.statusCode, options.message);
 	},
+	skipSuccessfulRequests: true,
 });
 
 module.exports = loginLimiter;
