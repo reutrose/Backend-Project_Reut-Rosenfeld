@@ -50,7 +50,7 @@ This project is a **Node.js** backend server integrated with **MongoDB**, develo
    ```
 2. Clone the repository:
    ```sh
-   git clone https://github.com/reutrose/Backend-Project_Reut-Rosenfeld.git
+   git clone https://github.com/reutrose/CardsServer_ReutR.git
    ```
 3. Navigate to the project folder:
    ```sh
