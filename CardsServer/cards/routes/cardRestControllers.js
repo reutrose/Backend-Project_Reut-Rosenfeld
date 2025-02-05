@@ -107,8 +107,7 @@ router.put("/:id", auth, async (req, res) => {
 });
 
 router.patch("/:id", auth, async (req, res) => {
-	let action = req.header("action");
-	if (action === "change-biz-number") {
+	if (req.body) {
 		try {
 			let { id } = req.params;
 			let { bizNumber } = req.body;
@@ -125,7 +124,7 @@ router.patch("/:id", auth, async (req, res) => {
 		} catch (error) {
 			handleError(res, 400, error.message);
 		}
-	} else if (action === "like") {
+	} else {
 		try {
 			let { id } = req.params;
 			let userId = req.user._id;
@@ -137,8 +136,6 @@ router.patch("/:id", auth, async (req, res) => {
 		} catch (error) {
 			handleError(res, 400, error.message);
 		}
-	} else {
-		return handleError(res, 405, "Invalid action.");
 	}
 });
 

@@ -12,6 +12,7 @@ const SECRET_WORD = process.env.SECRET_WORD;
 const createUsers = async () => {
 	const users = [
 		{
+			_id: "1a1a1a1a1a1a1a1a1a1a1a1a",
 			name: {
 				first: "Emily",
 				middle: "Rose",
@@ -36,6 +37,7 @@ const createUsers = async () => {
 			isBusiness: false,
 		},
 		{
+			_id: "2b2b2b2b2b2b2b2b2b2b2b2b",
 			name: {
 				first: "Rajesh",
 				middle: "Kumar",
@@ -60,6 +62,7 @@ const createUsers = async () => {
 			isBusiness: true,
 		},
 		{
+			_id: "3c3c3c3c3c3c3c3c3c3c3c3c",
 			name: {
 				first: "Sophia",
 				middle: "Anne",
