@@ -24,13 +24,7 @@ const registerUser = async (newUser) => {
 // Get User by ID
 const getUser = async (userId) => {
 	try {
-		let user = await User.findById(userId);
-		user = {
-			email: user.email,
-			name: user.name,
-			_id: user._id,
-			isBusiness: user.isBusiness,
-		};
+		let user = await User.findById(userId, "-password");
 		return user;
 	} catch (error) {
 		return createError("Mongoose", error);
@@ -61,7 +55,7 @@ const login = async (email, password) => {
 // Get All Users
 const getAllUsers = async () => {
 	try {
-		let users = await User.find();
+		let users = await User.find({}, "-password");
 		return users;
 	} catch (error) {
 		return createError("Mongoose", error);
@@ -91,7 +85,7 @@ const deleteUser = async (userId) => {
 // Change User Type
 const changeUserType = async (userId) => {
 	try {
-		let user = await User.findById(userId);
+		let user = await User.findById(userId, "-password");
 		user.isBusiness = !user.isBusiness;
 		user = await user.save();
 		return user;

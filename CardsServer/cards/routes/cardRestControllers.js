@@ -75,7 +75,7 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", auth, async (req, res) => {
 	try {
 		let userInfo = req.user;
-		if (!userInfo.isBusiness && !userInfo.isAdmin) {
+		if (!userInfo.isBusiness) {
 			return handleError(
 				res,
 				403,

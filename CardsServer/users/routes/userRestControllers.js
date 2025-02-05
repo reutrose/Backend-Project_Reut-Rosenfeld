@@ -14,7 +14,6 @@ const { registerValidation } = require("../validation/userValidationService");
 const { loginValidation } = require("../validation/userValidationService");
 const normalizeUser = require("../helpers/normalize");
 const loginLimiter = require("../helpers/loginLimiter");
-
 const router = express.Router();
 
 // User Register
@@ -94,6 +93,9 @@ router.put("/:id", auth, async (req, res) => {
 		}
 		if (req.body.password !== undefined) {
 			return handleError(res, 405, "Password change is not allowed.");
+		}
+		if (req.body.isAdmin !== undefined) {
+			return handleError(res, 405, "Role change is not allowed.");
 		}
 		let newUser = await normalizeUser(req.body);
 		let user = await updateUser(id, newUser);
