@@ -153,7 +153,15 @@ Distributed under the **ISC License**.
 
 ## API Documentation
 
-API documentation for this project will be added using **Postman**.
+API documentation for this project using **Postman**:
+
+# Cards:
+
+https://documenter.getpostman.com/view/40630650/2sAYX6pN81
+
+# Users:
+
+https://documenter.getpostman.com/view/40630650/2sAYX6pMtj
 
 ---
 
