@@ -52,18 +52,22 @@ This project is a **Node.js** backend server integrated with **MongoDB**, develo
    ```sh
    git clone https://github.com/reutrose/CardsServer_ReutR.git
    ```
-3. Navigate to the project folder:
+3. Navigate to the main folder:
+   ```sh
+   cd Backend-Project_Reut-Rosenfeld
+   ```
+4. Navigate to the project folder:
    ```sh
    cd CardsServer
    ```
-4. Install all dependencies:
+5. Install all dependencies:
    ```sh
    npm install
    ```
 
 ### Environment Variables
 
-⚠ **IMPORTANT:** Before running the project, make sure you add the **.env** file to the root folder. If the `.env` file is missing, the project will **not** work correctly.
+⚠️ **IMPORTANT:** Before running the project, make sure you add the **.env** file to the root folder. If the `.env` file is missing, the project will **not** work correctly.
 
 If you are the examiner, please check the **assignment submission** where a `.zip` folder is provided. Inside, you will find the `.env` file that needs to be placed in the **main folder** before starting the server.
 
