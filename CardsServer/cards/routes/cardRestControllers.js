@@ -107,7 +107,7 @@ router.put("/:id", auth, async (req, res) => {
 });
 
 router.patch("/:id", auth, async (req, res) => {
-	if (req.body) {
+	if (req.body.hasOwnProperty("bizNumber")) {
 		try {
 			let { id } = req.params;
 			let { bizNumber } = req.body;
@@ -120,7 +120,8 @@ router.patch("/:id", auth, async (req, res) => {
 				);
 			}
 			let changedNum = await changeBizNum(id, bizNumber);
-			res.send({ bizNumber: changedNum });
+			let card = await getCard(id);
+			res.send(card);
 		} catch (error) {
 			handleError(res, 400, error.message);
 		}
