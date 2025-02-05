@@ -99,7 +99,7 @@ When the server starts, a function automatically checks whether the database is 
 - **Retrieve user** information by ID
 - **Get all users** (admin only)
 - **Update user** information
-- **Delete user** (admin only)
+- **Delete user**
 - **Change user role** (admin only, from business to customer)
 
 ### Business Card Management
